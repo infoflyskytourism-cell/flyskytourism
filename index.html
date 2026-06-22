@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fly Sky Tourism | Packages, Tours, Flights & Hotels</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="firebase-config.js?v=1"></script>
+    <script defer src="site-ui.js?v=2"></script>
+    <script defer src="currency.js?v=1"></script>
+    <script defer src="destination-data.js?v=3"></script>
+    <script defer src="app.js?v=6"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Fly Sky Tourism home">
+        <img class="brand-logo" src="assets/fly-sky-logo-cropped.jpeg" alt="Fly Sky Tourism & Transport DMC" />
+        <span>
+          <strong>Fly Sky Tourism</strong>
+          <small>Tourism & Transport DMC</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#packages">Packages</a>
+        <a href="#tours">Tours</a>
+        <a href="#about">About</a>
+        <a href="#why">Why us</a>
+        <a href="#booking">Booking</a>
+        <a href="#api">API</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="topbar-actions">
+        <label class="currency-switcher" aria-label="Select currency">
+          <span>Currency</span>
+          <select data-currency-select>
+            <option value="USD">USD</option>
+            <option value="AED">AED</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+          </select>
+        </label>
+        <a class="nav-cta" href="https://wa.me/971505596425">WhatsApp</a>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media hero-slide is-active" style="background-image: linear-gradient(90deg, rgba(28, 0, 5, 0.78), rgba(92, 0, 12, 0.32) 48%, rgba(255, 255, 255, 0.02)), url('assets/destination-banners/azerbaijan-baku-bay.png')" role="img" aria-label="Azerbaijan Baku skyline with Flame Towers"></div>
+        <div class="hero-media hero-slide" style="background-image: linear-gradient(90deg, rgba(28, 0, 5, 0.78), rgba(92, 0, 12, 0.3) 48%, rgba(255, 255, 255, 0.02)), url('assets/destination-banners/georgia-gergeti.png')" role="img" aria-label="Georgia Gergeti Trinity Church and Caucasus mountains"></div>
+        <div class="hero-media hero-slide" style="background-image: linear-gradient(90deg, rgba(28, 0, 5, 0.78), rgba(92, 0, 12, 0.3) 48%, rgba(255, 255, 255, 0.02)), url('assets/main-caucasus-package/image-37.png')" role="img" aria-label="Armenia Lake Sevan and heritage landscape"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Signature travel experience</p>
+          <h1 id="hero-title">Grand Caucasus Tour</h1>
+          <p>
+            Azerbaijan, Georgia, and Armenia in one premium 10 Days / 9 Nights
+            group tour with 4 star hotels, AC transport, professional guides,
+            included dinners, and simplified travel for UAE residents.
+          </p>
+          <div class="hero-attractions" aria-label="Featured Grand Caucasus attractions">
+            <span>Flame Towers</span>
+            <span>Heydar Aliyev Center</span>
+            <span>Old City Baku</span>
+            <span>Gergeti Trinity Church</span>
+            <span>Old Tbilisi</span>
+            <span>Gudauri</span>
+            <span>Lake Sevan</span>
+            <span>Cascade Complex</span>
+            <span>Khor Virap</span>
+          </div>
+          <div class="hero-badges" aria-label="Grand Caucasus package facts">
+            <span>10 Days / 9 Nights</span>
+            <span>3 Countries</span>
+            <span data-currency-base="USD" data-currency-amount="1153" data-currency-prefix="From " data-currency-suffix=" pp">From USD 1,153 pp</span>
+            <span>2026 departures</span>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="destination.html?place=grand-caucasus&package=grand-caucasus-tour">View full itinerary</a>
+            <a class="button ghost" href="https://wa.me/971505596425?text=Hello%20Fly%20Sky%20Tourism%2C%20I%20want%20details%20for%20the%20Grand%20Caucasus%2010%20Days%20package.">WhatsApp package</a>
+          </div>
+          <div class="hero-slider-controls" aria-label="Featured package slides">
+            <button class="is-active" type="button" data-hero-slide="0" aria-label="Show Caucasus package slide 1"></button>
+            <button type="button" data-hero-slide="1" aria-label="Show Caucasus package slide 2"></button>
+            <button type="button" data-hero-slide="2" aria-label="Show Caucasus package slide 3"></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-search" aria-label="Quick booking search">
+        <form id="quickSearchForm">
+          <label>
+            <span>Service</span>
+            <select name="service">
+              <option>Holiday package</option>
+              <option>Tour activity</option>
+              <option>Flight enquiry</option>
+              <option>Hotel only</option>
+            </select>
+          </label>
+          <label>
+            <span>Destination</span>
+            <select name="destination">
+              <option>Grand Caucasus</option>
+              <option>Azerbaijan</option>
+              <option>Georgia</option>
+              <option>Armenia</option>
+              <option>Dubai</option>
+              <option>Singapore</option>
+              <option>Malaysia</option>
+              <option>Bali</option>
+              <option>Thailand</option>
+            </select>
+          </label>
+          <label>
+            <span>Travel date</span>
+            <input type="date" name="travelDate" />
+          </label>
+          <label>
+            <span>Guests</span>
+            <input type="number" name="guests" min="1" value="2" />
+          </label>
+          <button type="submit">Check options</button>
+        </form>
+      </section>
+
+      <section class="featured-tour" aria-labelledby="featured-tour-title">
+        <div class="featured-tour-copy">
+          <p class="eyebrow">Featured group departure</p>
+          <h2 id="featured-tour-title">Azerbaijan, Georgia & Armenia in one ready-to-sell itinerary</h2>
+          <p>
+            Standard group size 30 people, premium 4 star selected properties,
+            9 breakfasts, 9 premium dinners, guides in all destinations, border
+            handling, Gergeti 4x4, Tbilisi cable car, and a Georgian folk show dinner.
+          </p>
+          <div class="featured-route" aria-label="Route countries">
+            <span>Azerbaijan 3N</span>
+            <span>Georgia 4N</span>
+            <span>Armenia 2N</span>
+          </div>
+        </div>
+        <div class="featured-pricing" aria-label="Grand Caucasus package pricing">
+          <a class="featured-package-photo" href="destination.html?place=grand-caucasus&package=grand-caucasus-tour" aria-label="Open Grand Caucasus complete itinerary">
+            <img src="assets/destination-banners/georgia-gergeti.png" alt="Grand Caucasus package with Gergeti Trinity Church" loading="lazy" />
+          </a>
+          <div><span>Double sharing</span><strong data-currency-base="USD" data-currency-amount="1153">USD 1,153</strong></div>
+          <div><span>Triple sharing</span><strong data-currency-base="USD" data-currency-amount="1185">USD 1,185</strong></div>
+          <div><span>Single sharing</span><strong data-currency-base="USD" data-currency-amount="1493">USD 1,493</strong></div>
+          <a class="button primary full" href="destination.html?place=grand-caucasus&package=grand-caucasus-tour">Open complete itinerary</a>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Fly Sky Tourism quick facts">
+        <div>
+          <strong>12+ Years</strong>
+          <span>Travel industry experience</span>
+        </div>
+        <div>
+          <strong>1,500+</strong>
+          <span>Passengers coordinated in large operations</span>
+        </div>
+        <div>
+          <strong>Global DMC</strong>
+          <span>Trusted destination partner network</span>
+        </div>
+        <div>
+          <strong>24/7 Support</strong>
+          <span>Assistance before, during, and after travel</span>
+        </div>
+      </section>
+
+      <section class="section" id="packages">
+        <div class="section-heading">
+          <p class="eyebrow">Featured group departures</p>
+          <h2>Package routes ready to sell</h2>
+          <p>
+            Destination cards open itinerary options first, then complete day-wise
+            package pages with photos, inclusions, highlights, and pricing.
+          </p>
+        </div>
+        <div class="package-grid" id="packageGrid"></div>
+      </section>
+
+      <section class="section tours-only-section" id="tours">
+        <div class="section-heading">
+          <p class="eyebrow">Tours only</p>
+          <h2>Destination tours ready for direct enquiries</h2>
+          <p>
+            A dedicated single-column tour list for activities and day-by-day tour products.
+            Customers can review ready tour products and send direct enquiries.
+          </p>
+        </div>
+        <div class="tours-only-grid" id="toursOnlyGrid"></div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="about-lead">
+          <p class="eyebrow">About Fly Sky Tourism & Transport</p>
+          <h2>International travel expertise with hands-on destination management</h2>
+          <div class="about-copy">
+            <p>
+              Fly Sky Tourism & Transport is an international travel company with
+              operations and partnerships across the United Arab Emirates and Georgia,
+              providing comprehensive travel solutions for leisure travelers, corporate
+              clients, travel agents, and tour operators worldwide.
+            </p>
+            <p>
+              With over 12 years of professional experience in the travel and tourism
+              industry, our team specializes in destination management, group travel,
+              FIT holidays, MICE events, transportation services, and tailor-made travel
+              experiences across multiple destinations.
+            </p>
+            <p>
+              Over the years, we have successfully managed and coordinated travel
+              arrangements for thousands of passengers, ranging from small private groups
+              of 15 guests to large-scale operations exceeding 1,500 passengers.
+            </p>
+          </div>
+        </div>
+
+        <div class="proof-grid" aria-label="Fly Sky Tourism experience">
+          <div class="proof-card">
+            <strong>12+</strong>
+            <span>Years of travel industry experience</span>
+          </div>
+          <div class="proof-card">
+            <strong>1,500</strong>
+            <span>Passengers handled in large-scale operations</span>
+          </div>
+          <div class="proof-card">
+            <strong>500+</strong>
+            <span>Group travel, corporate, MICE, and FIT experience</span>
+          </div>
+          <div class="proof-card">
+            <strong>24/7</strong>
+            <span>Dedicated customer support before and during travel</span>
+          </div>
+        </div>
+
+        <div class="about-panels">
+          <article class="info-panel">
+            <h3>Our Experience</h3>
+            <ul class="check-list">
+              <li>Successfully managed groups of up to 1,500 passengers</li>
+              <li>Extensive experience handling groups of 500+, 200+, 100+, 50+ and FIT travelers</li>
+              <li>Expertise in leisure, corporate, MICE, and incentive travel</li>
+              <li>Strong network of trusted DMC partners worldwide</li>
+              <li>Professional ground handling and destination management services</li>
+              <li>Dedicated B2B and B2C travel solutions</li>
+            </ul>
+          </article>
+
+          <article class="info-panel destinations-panel">
+            <h3>Destinations We Specialize In</h3>
+            <div class="destination-tags" aria-label="Specialized destinations">
+              <span>Georgia</span>
+              <span>United Arab Emirates</span>
+              <span>Azerbaijan</span>
+              <span>Armenia</span>
+              <span>Singapore</span>
+              <span>Malaysia</span>
+              <span>Thailand</span>
+              <span>Bali, Indonesia</span>
+            </div>
+            <p>
+              Through strong destination partnerships and local expertise, we deliver
+              seamless travel experiences, competitive pricing, reliable transportation,
+              quality accommodations, and exceptional customer service.
+            </p>
+          </article>
+        </div>
+
+        <article class="founder-profile" aria-labelledby="founder-title">
+          <div class="founder-photo-wrap">
+            <img class="founder-photo" src="assets/founder-shujath-ali.png" alt="Shujath Ali, Founder and Managing Director" />
+          </div>
+          <div class="founder-copy">
+            <p class="eyebrow">Meet Our Founder</p>
+            <h2 id="founder-title">Shujath Ali</h2>
+            <p class="founder-role">Founder &amp; Managing Director</p>
+            <p>
+              With over 12 years of experience in the travel and tourism industry,
+              Shujath Ali founded Fly Sky Tourism &amp; Transport with a vision to
+              provide reliable, personalized, and memorable travel experiences for
+              travelers and travel partners worldwide.
+            </p>
+            <p>
+              Having successfully managed travel operations for thousands of travelers,
+              ranging from private holidays and FIT bookings to large-scale group
+              movements exceeding 1,500 passengers, he brings extensive expertise in
+              destination management, group travel, MICE events, and international
+              tourism operations.
+            </p>
+            <p>
+              His commitment to service excellence, strong industry partnerships, and
+              customer satisfaction continues to drive the company's growth across
+              Georgia, the UAE, and international markets.
+            </p>
+            <blockquote class="founder-message">
+              <h3>A Message From Our Founder</h3>
+              <p>
+                "Travel is not just about reaching a destination-it is about creating
+                unforgettable memories and meaningful experiences. At Fly Sky Tourism
+                &amp; Transport, our mission is to make every journey seamless, enjoyable,
+                and truly special while delivering the highest standards of
+                professionalism, reliability, and personalized service."
+              </p>
+              <footer>
+                <strong>Shujath Ali</strong>
+                <span>Founder &amp; Managing Director</span>
+                <span>Fly Sky Tourism &amp; Transport</span>
+              </footer>
+            </blockquote>
+          </div>
+        </article>
+      </section>
+
+      <section class="why-section" id="why">
+        <div class="section-heading">
+          <p class="eyebrow">Why choose Fly Sky Tourism & Transport?</p>
+          <h2>Your trusted travel partner for unforgettable journeys</h2>
+          <p>
+            From private family vacations to large-scale corporate events and incentive
+            groups, our team delivers flexible travel solutions with professional
+            coordination and transparent service.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article>
+            <h3>International Travel Expertise</h3>
+            <p>
+              Our team brings extensive knowledge of destination management, group travel,
+              FIT holidays, and corporate travel solutions across multiple destinations.
+            </p>
+          </article>
+          <article>
+            <h3>Proven Group Handling</h3>
+            <p>
+              We manage private groups, incentive trips, and operations from 15 passengers
+              to over 1,500 passengers with seamless coordination.
+            </p>
+          </article>
+          <article>
+            <h3>Strong Global DMC Network</h3>
+            <p>
+              Trusted destination partners, hotels, transport providers, and tourism
+              professionals support service standards across every itinerary.
+            </p>
+          </article>
+          <article>
+            <h3>Competitive & Transparent Pricing</h3>
+            <p>
+              Direct partnerships help us offer strong B2B and B2C rates without
+              compromising quality, comfort, or reliability.
+            </p>
+          </article>
+          <article>
+            <h3>Reliable Transportation Services</h3>
+            <p>
+              From airport transfers and private vehicles to group transport and luxury
+              travel arrangements, we provide safe and comfortable movement.
+            </p>
+          </article>
+          <article>
+            <h3>Carefully Selected Hotels & Services</h3>
+            <p>
+              We partner with reputable hotels and service providers to ensure comfort,
+              convenience, and quality throughout every journey.
+            </p>
+          </article>
+          <article>
+            <h3>Dedicated Customer Support</h3>
+            <p>
+              Prompt assistance before, during, and after travel helps every client enjoy
+              a smooth and worry-free experience.
+            </p>
+          </article>
+          <article>
+            <h3>Personalized Travel Experiences</h3>
+            <p>
+              Every itinerary can be tailored to individual preferences, budgets, travel
+              styles, and special requirements.
+            </p>
+          </article>
+          <article>
+            <h3>Professional B2B & B2C Solutions</h3>
+            <p>
+              Travel agencies, corporate clients, and individual travelers receive
+              flexible solutions designed around their exact requirements.
+            </p>
+          </article>
+        </div>
+
+        <div class="mission-vision">
+          <article>
+            <p class="eyebrow">Our Mission</p>
+            <h3>Professional, reliable, customer-focused travel</h3>
+            <p>
+              To provide exceptional travel experiences through professionalism,
+              reliability, innovation, and customer-focused service while building
+              long-term partnerships with travelers and travel professionals worldwide.
+            </p>
+          </article>
+          <article>
+            <p class="eyebrow">Our Vision</p>
+            <h3>Recognized excellence in destination management</h3>
+            <p>
+              To become a leading international travel and destination management company
+              recognized for excellence in group handling, customer satisfaction, and
+              unforgettable travel experiences.
+            </p>
+          </article>
+        </div>
+
+        <div class="quote-cta" aria-label="Request a travel quotation">
+          <div>
+            <p class="eyebrow">Ready to plan?</p>
+            <h2>Build a custom package, group movement, or partner quote.</h2>
+            <p>
+              Share the destination, dates, group size, hotel category, and any special
+              requirements. Our team will prepare a tailored travel solution.
+            </p>
+          </div>
+          <a class="button primary" href="https://wa.me/971505596425?text=Hello%20Fly%20Sky%20Tourism%2C%20I%20would%20like%20a%20travel%20quote.">Request quote on WhatsApp</a>
+        </div>
+      </section>
+
+      <section class="split-section" id="booking">
+        <div class="booking-copy">
+          <p class="eyebrow">Booking desk</p>
+          <h2>Capture the customer details you need</h2>
+          <p>
+            Use one form for packages, tours, flight enquiries, and hotel-only
+            requests. Submissions are prepared as email enquiries so you can
+            start receiving leads immediately.
+          </p>
+          <div class="service-list">
+            <span>Packages</span>
+            <span>Tours</span>
+            <span>Flights with API</span>
+            <span>Hotels only</span>
+          </div>
+        </div>
+
+        <form class="booking-form" id="bookingForm" action="https://formsubmit.co/info@flyskytourism.com" method="POST">
+          <input type="hidden" name="_subject" value="New Fly Sky Tourism enquiry" />
+          <input type="hidden" name="_replyto" value="" />
+          <input type="hidden" name="_next" value="" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" hidden />
+          <div class="form-row">
+            <label>
+              <span>Full name</span>
+              <input name="name" type="text" placeholder="Customer name" required />
+            </label>
+            <label>
+              <span>Phone / WhatsApp</span>
+              <input name="phone" type="tel" placeholder="+971..." required />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              <span>Email</span>
+              <input name="email" type="email" placeholder="name@example.com" required />
+            </label>
+            <label>
+              <span>Service</span>
+              <select name="service">
+                <option>Holiday package</option>
+                <option>Tour activity</option>
+                <option>Flight enquiry</option>
+                <option>Hotel only</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              <span>Destination</span>
+              <select name="destination">
+                <option>Grand Caucasus</option>
+                <option>Azerbaijan</option>
+                <option>Georgia</option>
+                <option>Armenia</option>
+                <option>Dubai</option>
+                <option>Singapore</option>
+                <option>Malaysia</option>
+                <option>Bali</option>
+                <option>Thailand</option>
+              </select>
+            </label>
+            <label>
+              <span>Travel dates</span>
+              <input name="dates" type="text" placeholder="20 Jul - 25 Jul" />
+            </label>
+          </div>
+          <label>
+            <span>Requirements</span>
+            <textarea name="requirements" rows="4" placeholder="Flights, hotels, room type, number of guests, budget, special requests"></textarea>
+          </label>
+          <button class="button primary full" type="submit">Send enquiry</button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+      </section>
+
+      <section class="api-band" id="api">
+        <div>
+          <p class="eyebrow">API ready structure</p>
+          <h2>Connect suppliers when you are ready</h2>
+          <p>
+            The website is prepared around separate flows for flight API search,
+            hotel-only bookings, package enquiries, and tours. A live backend can
+            later connect Amadeus, Travelport, Hotelbeds, TBO, or your preferred
+            supplier.
+          </p>
+        </div>
+        <div class="api-steps" aria-label="API integration flow">
+          <div><strong>1</strong><span>Search request</span></div>
+          <div><strong>2</strong><span>Supplier API</span></div>
+          <div><strong>3</strong><span>Quote & booking</span></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div>
+        <strong>Fly Sky Tourism</strong>
+        <p>Packages, tours, flight enquiries, and hotel-only bookings.</p>
+      </div>
+      <address>
+        <a href="tel:+971505596425">UAE: +971 50 559 6425</a>
+        <a href="tel:+995511553024">Georgia: +995 511 55 30 24</a>
+        <a href="mailto:info.flyskytourism@gmail.com">info.flyskytourism@gmail.com</a>
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Landscape_from_Khor_Virap_Monastery_to_Mount_Ararat.jpg">Armenia image credit</a>
+      </address>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination | Fly Sky Tourism</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="firebase-config.js?v=1"></script>
+    <script defer src="site-ui.js?v=2"></script>
+    <script defer src="currency.js?v=1"></script>
+    <script defer src="destination-data.js?v=3"></script>
+    <script defer src="destination.js?v=4"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Fly Sky Tourism home">
+        <img class="brand-logo" src="assets/fly-sky-logo-cropped.jpeg" alt="Fly Sky Tourism & Transport DMC" />
+        <span>
+          <strong>Fly Sky Tourism</strong>
+          <small>Tourism & Transport DMC</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html#packages">Packages</a>
+        <a href="#tourPackages">Itineraries</a>
+        <a href="#places">Best places</a>
+        <a href="#hotels">Hotels</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="topbar-actions">
+        <label class="currency-switcher" aria-label="Select currency">
+          <span>Currency</span>
+          <select data-currency-select>
+            <option value="USD">USD</option>
+            <option value="AED">AED</option>
+            <option value="INR">INR</option>
+            <option value="EUR">EUR</option>
+          </select>
+        </label>
+        <a class="nav-cta" href="https://wa.me/971505596425">WhatsApp</a>
+      </div>
+    </header>
+
+    <main id="destinationPage">
+      <section class="destination-hero">
+        <div class="destination-hero-media" id="destinationHeroMedia"></div>
+        <div class="destination-hero-content">
+          <a class="back-link" href="index.html#packages">Back to packages</a>
+          <p class="eyebrow">Destination details</p>
+          <h1 id="destinationName">Destination</h1>
+          <p id="destinationTagline"></p>
+          <div class="hero-actions">
+          <a class="button primary" href="#tourPackages">See itineraries</a>
+            <a class="button ghost" href="#hotels">See hotels</a>
+            <a class="button ghost" id="whatsappDestination" href="https://wa.me/971505596425">Ask on WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="destination-toolbar" aria-label="Hotel price settings">
+        <label>
+          <span>Check-in</span>
+          <input id="checkInDate" type="date" />
+        </label>
+        <label>
+          <span>Nights</span>
+          <input id="nightCount" type="number" min="1" value="1" />
+        </label>
+        <label>
+          <span>Your commission</span>
+          <select id="commissionRate">
+            <option value="0.2" selected>20%</option>
+            <option value="0.15">15%</option>
+            <option value="0.25">25%</option>
+          </select>
+        </label>
+        <div class="live-note">
+          <strong>API ready</strong>
+          <span>Connect Hotelbeds, TBO, or Amadeus to replace demo net rates with live availability.</span>
+        </div>
+      </section>
+
+      <section class="section package-detail-section" id="packageDetail" hidden>
+        <div id="packageDetailContent"></div>
+      </section>
+
+      <section class="section tour-package-section" id="tourPackages" hidden>
+        <div class="section-heading">
+          <p class="eyebrow">Ready packages</p>
+          <h2 id="packageSectionTitle">Itinerary options</h2>
+          <p id="packageSectionIntro">Choose an itinerary to view complete day-wise details, photos, inclusions, highlights, and pricing.</p>
+        </div>
+        <div class="tour-package-grid" id="tourPackageGrid"></div>
+      </section>
+
+      <section class="section" id="places">
+        <div class="section-heading">
+          <p class="eyebrow">Best places</p>
+          <h2>Top experiences in <span id="placesDestination">this destination</span></h2>
+        </div>
+        <div class="places-grid" id="placesGrid"></div>
+      </section>
+
+      <section class="section hotel-section" id="hotels">
+        <div class="section-heading">
+          <p class="eyebrow">Hotels with your selling price</p>
+          <h2>Net rate + 20% commission</h2>
+          <p>
+            Prices below are demo supplier net rates in AED until your live hotel
+            API is connected. The page already applies your commission formula.
+          </p>
+        </div>
+        <div class="hotel-grid" id="hotelGrid"></div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div>
+        <strong>Fly Sky Tourism</strong>
+        <p>Packages, tours, flight enquiries, and hotel-only bookings.</p>
+      </div>
+      <address>
+        <a href="tel:+971505596425">UAE: +971 50 559 6425</a>
+        <a href="tel:+995511553024">Georgia: +995 511 55 30 24</a>
+        <a href="mailto:info.flyskytourism@gmail.com">info.flyskytourism@gmail.com</a>
+      </address>
+    </footer>
+  </body>
+</html>
