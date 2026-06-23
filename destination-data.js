@@ -3,7 +3,7 @@ window.destinationData = [
     slug: "grand-caucasus",
     name: "Grand Caucasus Tour",
     tagline: "Azerbaijan, Georgia, and Armenia in one premium 10 Days / 9 Nights group journey.",
-    image: "assets/destination-banners/georgia-gergeti.png",
+    image: "assets/destination-banner/georgia-gergeti.png",
     packages: [
       {
         slug: "grand-caucasus-tour",
