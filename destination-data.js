@@ -10,7 +10,7 @@ window.destinationData = [
         title: "Grand Caucasus Tour",
         duration: "10 Days / 9 Nights",
         price: "From USD 1,153 per person",
-        image: "assets/destination-banners/georgia-gergeti.png",
+        image: "assets/destination-banner/georgia-gergeti.png",
         summary: "A premium three-country Caucasus route with Baku, Gabala, Tbilisi, Kazbegi, Gudauri, Yerevan, Lake Sevan, Garni, Geghard, and Khor Virap.",
         highlights: [
           "Azerbaijan icons: Flame Towers, Heydar Aliyev Center, Old City Baku, Baku Boulevard, and Gabala",
@@ -36,25 +36,25 @@ window.destinationData = [
           {
             day: "Day 1",
             title: "Arrival in Baku",
-            image: "assets/destination-banners/azerbaijan-baku-bay.png",
+            image: "assets/destination-banner/azerbaijan-baku-bay.png",
             details: "Arrival assistance at Baku airport, private transfer to hotel, check-in, and relaxed evening on Baku Boulevard with dinner.",
           },
           {
             day: "Day 2",
             title: "Old City Baku, Flame Towers, and Heydar Aliyev Center",
-            image: "assets/destination-banners/azerbaijan-collage.png",
+            image: "assets/destination-banner/azerbaijan-collage.png",
             details: "Explore Icherisheher, Maiden Tower, Shirvanshah Palace area, Highland Park, Flame Towers photo stop, and the flowing architecture of Heydar Aliyev Center.",
           },
           {
             day: "Day 3",
             title: "Gobustan, Mud Volcanoes, and Gabala",
-            image: "assets/destination-banners/azerbaijan-flame-towers.png",
+            image: "assets/destination-banner/azerbaijan-flame-towers.png",
             details: "Visit Gobustan rock art landscape, mud volcano region when accessible, then continue toward Gabala for mountain scenery and overnight stay.",
           },
           {
             day: "Day 4",
             title: "Gabala to Tbilisi",
-            image: "assets/destination-banners/georgia-gudauri.png",
+            image: "assets/destination-banner/georgia-gudauri.png",
             details: "Morning nature stops in Gabala, then scenic transfer toward Georgia with border assistance. Arrive in Tbilisi for dinner and overnight.",
           },
           {
@@ -66,7 +66,7 @@ window.destinationData = [
           {
             day: "Day 6",
             title: "Gudauri, Kazbegi, and Gergeti Trinity Church",
-            image: "assets/destination-banners/georgia-gergeti.png",
+            image: "assets/destination-banner/georgia-gergeti.png",
             details: "Travel through Ananuri and Gudauri, stop at the Friendship Monument, continue to Kazbegi, and ride 4x4 vehicles to Gergeti Trinity Church.",
           },
           {
